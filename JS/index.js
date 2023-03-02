@@ -7,6 +7,7 @@ router.add('', "/pages/home.html");
 router.add('/', "/pages/home.html");
 router.add("/aboutme", "/pages/aboutme.html");
 router.add("/projects", "/pages/projects.html");
+router.add("/tecnologies", "/pages/tecnologies.html");
 
 
 router.handle();
