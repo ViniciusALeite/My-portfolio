@@ -16,10 +16,18 @@ export class Router {
 
     async handle() {
         const { pathname } = window.location
-        const route = this.routes[pathname] || this.routes[404]       
+        const route = this.routes[pathname] || this.routes[404]
 
         await fetch(route)
             .then((data) => data.text())
             .then(html => document.querySelector('#app').innerHTML = html)
+
+        if (pathname === "/contacts") {
+            $('footer').fadeOut('fast')
+        } else {
+            $('footer').fadeIn('fast')
+        }           
+
+        $('#app').removeAttr('class').addClass('app_' + pathname.split('/')[1]);
     };
 };
